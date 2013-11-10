@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project name="AjaxOnJava" default="compile" basedir=".">
+	<property name="src.dir" value="src"/>
+	<property name="war.dir" value="war"/>
+	<property name="class.dir" value="${war.dir}/WEB-INF/classes"/>
+	<property name="lib.dir" value="${war.dir}/WEB-INF/lib"/>
+	<property name="deploy.dir" value="/Users/darkart/java/apache-tomcat/webapps"/>
+
+	<path id="class.path">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="init">
+		<mkdir dir="${class.dir}"/>
+	</target>
+
+	<target name="compile" depends="init" description="Compiles all source code.">
+		<javac srcdir="${src.dir}" destdir="${class.dir}" debug="on" classpathref="class.path"/>
+	</target>
+
+	<target name="clean" description="Erase contents of classes dir">
+		<delete dir="${class.dir}"/>
+	</target>
+	
+	<target name="deploy">
+		<copy todir="${deploy.dir}/AjaxOnJava">
+			<fileset dir="${war.dir}"/>
+		</copy>
+	</target>
+</project>
