@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "_default": {
+            "link": "darkart"
+        }, 
+        "darkart": {
+            "applicationId": "sBWluUeWGFJrcUh25fGFaSScO1QJAhvRTwsoawFh", 
+            "masterKey": "fMkF5XRrGA1uJuFNFkHTmAi5mch2pjTrpze3uKZv"
+        }
+    }
+}
